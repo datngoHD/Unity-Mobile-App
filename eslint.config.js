@@ -1,7 +1,7 @@
 // eslint.config.js
 module.exports = [
   {
-    files: ['src/**/*.ts', 'src/**/*.tsx', 'src/**/*.js', 'src/**/*.jsx'],
+    files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx'],
     ignores: [
       'node_modules/',
       'ios/',

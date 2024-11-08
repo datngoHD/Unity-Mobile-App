@@ -3,7 +3,7 @@ import {
   NavigationContainer,
   useNavigationContainerRef,
 } from '@react-navigation/native';
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
 import MainNavigation from '@navigation';
 
 export default function App() {
@@ -12,7 +12,9 @@ export default function App() {
 
   return (
     <NavigationContainer ref={navigationRef}>
-      <View></View>
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <Text>Unity Mobile App</Text>
+      </View>
     </NavigationContainer>
   );
 }
