@@ -3,18 +3,22 @@ import {
   NavigationContainer,
   useNavigationContainerRef,
 } from '@react-navigation/native';
-import { View, Text } from 'react-native';
 import MainNavigation from '@navigation';
+import * as NavigationActionsService from '@services/navigation';
+import { View, Text } from 'react-native';
 
 export default function App() {
   const navigationRef =
     useNavigationContainerRef<Navigation.MainStackParamList>();
 
   return (
-    <NavigationContainer ref={navigationRef}>
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Unity Mobile App</Text>
-      </View>
+    <NavigationContainer
+      ref={navigationRef}
+      onReady={() =>
+        NavigationActionsService.instance().createNavigationRef(navigationRef)
+      }
+    >
+      <MainNavigation />
     </NavigationContainer>
   );
 }
