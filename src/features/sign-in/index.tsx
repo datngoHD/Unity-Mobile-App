@@ -1,26 +1,23 @@
 import React from 'react';
-import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
-import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { StyleSheet, View } from 'react-native';
+import { Button } from 'react-native-paper';
 import * as NavigationActionsService from '@services/navigation';
-
-type SignInStackScreenProps = NativeStackScreenProps<
-  Navigation.BaseStackParamList,
-  'SignIn'
->;
-
-type SignInStackScreenRouteProp = SignInStackScreenProps['route'];
 
 const SignIn = () => {
   return (
     <View style={styles.container}>
-      <Text>Unity Mobile App</Text>
-      <TouchableOpacity
+      <Button
+        mode="contained"
         onPress={() => {
           NavigationActionsService.instance().showLoading();
+          setTimeout(
+            () => NavigationActionsService.instance().hideLoading(),
+            3000
+          );
         }}
       >
-        <Text>Sign In</Text>
-      </TouchableOpacity>
+        Sign In
+      </Button>
     </View>
   );
 };
@@ -33,6 +30,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
+    // alignItems: 'center',
   },
 });

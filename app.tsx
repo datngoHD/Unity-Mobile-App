@@ -5,7 +5,6 @@ import {
 } from '@react-navigation/native';
 import MainNavigation from '@navigation';
 import * as NavigationActionsService from '@services/navigation';
-import { View, Text } from 'react-native';
 
 export default function App() {
   const navigationRef =

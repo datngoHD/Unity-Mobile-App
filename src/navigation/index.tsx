@@ -14,10 +14,10 @@ const MainNavigation = () => {
       <MainStack.Screen name="SignIn" component={SignInStackScreen} />
       <MainStack.Screen
         name="LoadingPage"
-        // options={{
-        //   presentation: 'transparentModal',
-        //   animation: 'fade',
-        // }}
+        options={{
+          presentation: 'transparentModal',
+          animation: 'fade',
+        }}
         component={LoadingPage}
       />
     </MainStack.Navigator>
